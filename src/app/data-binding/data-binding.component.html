@@ -1,0 +1,29 @@
+<h2> Interpolation</h2>
+<p>{{nome}} tem a  idade {{idade}} anos !</p>
+<p>{{nome}} tem mais de 30 anos ?/p>
+<p>{{idade >30 }}</p>
+
+
+ <p>Quanto é idade {{idade}}+ {{maisUM}} ?</p>
+ <p> {{ idade + maisUM}}</p>
+
+
+ <hr>
+
+ <h2>Property Binding</h2>
+ <button [disabled]="checkdDisabled"> Botao</button>
+
+ <img [src]="imgSrc"  [title]="imgTitle" [alt]="imgTitle">
+
+ <br>
+ <br>
+ <hr>
+
+ <h2> Event Binding </h2>
+
+<button (click)="alertaInfo ($event)">EVENTO</button>
+
+<div (mousemove)="($event)" style="background:red; width: 300px; heigth: 300px;"></div>
+ <br>
+ <br>
+ <hr>
