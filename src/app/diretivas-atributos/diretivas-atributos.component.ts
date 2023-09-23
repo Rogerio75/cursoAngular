@@ -11,6 +11,7 @@ public heightPx: string = "200px";
 public backgroundColor: string = "red";
 public nome:string = "";
 public list:Array <{nome:string }> = [{nome: "Rogerio"}];
+public date:Date = new Date();
 
 ngOnInit(): void {
 
