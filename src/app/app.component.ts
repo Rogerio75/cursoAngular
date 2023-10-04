@@ -25,6 +25,7 @@ import { Component, OnInit } from '@angular/core';
 <button (click)="Add()" >Add</button>
 <br>
 -->
+<!--
 <ng-template [ngIf]="getDados">
   <h1> {{getDados.nome}}</h1>
   <h2>{{getDados.idade}}</h2>
@@ -32,6 +33,9 @@ import { Component, OnInit } from '@angular/core';
 
 <app-output (enviarDados)="setDados($event)"></app-output>
 <router-outlet></router-outlet>
+-->
+<app-food-list></app-food-list>
+
 `
 })
 export class AppComponent implements OnInit {
