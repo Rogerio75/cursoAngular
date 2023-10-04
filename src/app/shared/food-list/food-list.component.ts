@@ -1,3 +1,4 @@
+//services
 import { FoodListService } from './../../services/food-list.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
@@ -9,9 +10,16 @@ import { NgModel } from '@angular/forms';
 })
 export class FoodListComponent implements OnInit {
 
-constructor (private list: FoodListService) {}
+  public foodList: Array<string> = [];
+constructor (private foodListService: FoodListService) {}
 
   ngOnInit(): void {
+   this.foodList = this.foodListService.foodList() ;
+   this.foodListService.emitEvent.subscribe(
+
+    res => alert(`Olha voce add => ${res}`)
+
+   );
 
 }
 
