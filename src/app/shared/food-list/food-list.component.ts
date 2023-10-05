@@ -12,17 +12,23 @@ import { FoodList } from 'src/app/module/food-list';
 export class FoodListComponent implements OnInit {
 
   public foodList: Array<FoodList> =[];
+
 constructor (private foodListService: FoodListService) {}
 
   ngOnInit(): void {
    this.foodListService.foodList().subscribe(
-     //res => this.foodList = res,
+     res => this.foodList = res,
      error => console.log(error)
 
    ) ;
    this.foodListService.emitEvent.subscribe(
 
-    res => alert(`Olha voce add => ${res}`)
+    res => {
+      alert(`Olha voce add => ${res.nome}`)
+      return this.foodList.push(res);
+
+
+    }
 
    );
 

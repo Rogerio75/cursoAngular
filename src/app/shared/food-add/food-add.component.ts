@@ -20,7 +20,12 @@ ngOnInit(): void {
 }
 
 public ListAddItem(value: string ){
- return this.foodListService.foodListAdd(value);
+ return this.foodListService.foodListAdd(value).subscribe(
+  res => this.foodListService.foodListAlert(res),
+   error => error
+
+
+ );
 
 }
 
