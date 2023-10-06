@@ -2,6 +2,7 @@
 import { FoodListService } from './../../services/food-list.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
+//Services
 import { FoodList } from 'src/app/module/food-list';
 
 @Component({
@@ -33,6 +34,25 @@ constructor (private foodListService: FoodListService) {}
    );
 
 }
+
+
+ public foodListDelete (id:number){
+   return this.foodListService.foodListDelete(id).subscribe(
+    next(position) {
+      console.log('Current Position: ', id);
+    },
+    error(msg) {
+      console.log('Error Getting Location: ', msg);
+    }
+
+    res => console.log(res),
+    error => error
+
+
+   );
+
+
+ }
 
 
 }
