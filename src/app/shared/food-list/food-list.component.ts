@@ -38,21 +38,32 @@ constructor (private foodListService: FoodListService) {}
 
  public foodListDelete (id:number){
    return this.foodListService.foodListDelete(id).subscribe(
-    next(position) {
-      console.log('Current Position: ', id);
-    },
-    error(msg) {
-      console.log('Error Getting Location: ', msg);
+  res =>{
+   this.foodList = this.foodList.filter(
+    item =>{
+  return id !== item.id
+
     }
 
-    res => console.log(res),
-    error => error
+   )
 
+  },
+  error => error
 
-   );
+ );
+ }
+ public foodListEdit(nome:string, id:number){
+  this.foodListService.foodListEdit(nome, id).subscribe(
+  res =>{
+    return console.log(res)
 
+  },
+  error => error
+  )
 
  }
+
+
 
 
 }
