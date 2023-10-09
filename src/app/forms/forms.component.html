@@ -7,6 +7,61 @@
 <br>
 <br>
 
+<label >
+Masculino
+<input type="radio" name="sexo" value="Masculino" ngModel   >
+
+</label>
+<br>
+<br>
+
+<label >
+  Feminino
+  <input type="radio" name="sexo" value="Feminino" ngModel   >
+
+  </label>
+  <br>
+  <br>
+
+  <label >
+    Outros
+    <input type="radio" name="sexo" value="Outros" ngModel   >
+    </label>
+    <br>
+    <br>
+
+    <label >
+      Angular
+      <input type="checkbox" name="angular"  ngModel   >
+      </label>
+      <br>
+      <br>
+
+      <label >
+        Vue
+        <input type="checkbox" name="vue"  ngModel   >
+        </label>
+        <br>
+        <br>
+
+        <label >
+          React
+          <input type="checkbox" name="react"  ngModel   >
+          </label>
+          <br>
+          <br>
+   <select name="comidas"  ngModel >
+    <option value="">Selecion um rango </option>
+    <option *ngFor ="let item of listComidas" [ngValue]="item" >
+      {{item.comida}}
+    </option>
+
+
+
+   </select>
+
+          <br>
+          <br>
 </form>
 
 
