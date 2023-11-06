@@ -20,13 +20,14 @@ ngOnInit(): void {
 }
 
 // coursesService =  new CoursesService;
-public courses: Observable <Course[]>;
-
+public courses$: Observable <Course[]>;
+//public courses: Course [] = [];
 constructor( private coursesService: CoursesService    ){
 //this.courses= []
 //this.coursesService = new CoursesService();
 
-this.courses = this.coursesService.list();
+this.courses$ = this.coursesService.list();
+//this.coursesService.list().subscribe(courses => this.courses = courses);
 }
 
 
