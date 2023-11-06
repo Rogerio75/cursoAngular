@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
 import { Course } from './../model/course';
 
 @Injectable({
@@ -8,14 +8,13 @@ import { Course } from './../model/course';
 })
 export class CoursesService {
 
+  private  readonly API = '/assets/fonteDados.json';
+
+
   constructor( private httpClient: HttpClient) { }
 
-  list(): Course[] {
-    return  [
-      { _id: '1', name: 'Angular', category: 'Development' },
-      { _id: '1', name: 'God fe', category: 'My dick' },
-
-    ];
-  }
+  list( )  {
+    return  this.httpClient.get<Course[]>(this.API);
+}
 
 }
